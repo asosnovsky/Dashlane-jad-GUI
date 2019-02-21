@@ -10,3 +10,8 @@ This is a simple tweak that uses [Jade-Application-Kit](https://github.com/codes
 ```
 wget https://raw.githubusercontent.com/asosnovsky/dashlane-jad-gui/master/install;./install
 ```
+
+## Screenshots
+
+<img src="./demo/02.png">
+<img src="./demo/01.png">
