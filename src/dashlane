@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # coding: utf-8
 import os
+from webbrowser import open_new
 from j.AK import Api, AppWindow, settings
 from gi.repository import Gtk, WebKit2, GLib
 
@@ -21,7 +22,9 @@ class DashlaneWindow(AppWindow):
                 print(url)
                 if url.lower().count("download") > 0:
                     decision.ignore()
+                    open_new(url)
                     return True
+
 
         self.webview.load_uri(settings("app", "route"))
         self.webview.connect("decide-policy", on_decide_policy)
