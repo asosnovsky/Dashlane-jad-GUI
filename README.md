@@ -8,7 +8,7 @@ This is a simple tweak that uses [Jade-Application-Kit](https://github.com/codes
 - run the following commands
 
 ```
-wget https://raw.githubusercontent.com/asosnovsky/dashlane-jad-gui/master/install;./install
+wget https://raw.githubusercontent.com/asosnovsky/dashlane-jad-gui/master/install;sh ./install
 ```
 
 ## Screenshots
