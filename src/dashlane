@@ -1,0 +1,17 @@
+#!/usr/bin/python
+# coding: utf-8
+import os
+from j.AK import Api, AppWindow, settings
+from gi.repository import Gtk, WebKit2, GLib
+
+class DashlaneWindow(AppWindow):
+    """
+    extends AK.AppWindow functionality
+    """
+
+    def __init__(self):
+        super(DashlaneWindow, self).__init__()
+        self.webview.load_uri(settings("app", "route"))
+
+DashlaneWindow()
+Gtk.main()

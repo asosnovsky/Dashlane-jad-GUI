@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+# coding: utf-8
+
+INSTALL_ROUTE=/usr/share/jad-dashlane-gui
+BASH_PATH=/usr/bin/dashlane-jad-gui
+CMD_NAME=dashlane-jad-gui
+
+sudo cp -r src $INSTALL_ROUTE
+echo "cd $INSTALL_ROUTE
+./dashlane" > $CMD_NAME
+echo "[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=$BASH_PATH/dashlane.png
+Type=Application
+Categories=Other;
+Exec=$CMD_NAME
+Name=Dashlane Password Manager
+GenericName=Dashlane
+StartupNotify=true
+Comment=Your password manager and digital wallet
+Path=
+" > dashlane.desktop
+
+sudo cp $CMD_NAME $BASH_PATH
+sudo chmod 755 $BASH_PATH
+sudo chmod +x $BASH_PATH
+
+sudo cp dashlane.desktop /usr/share/applications/dashlane.desktop
+sudo chmod 644 /usr/share/applications/dashlane.desktop
+
+echo "Installation Complete"

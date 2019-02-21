@@ -1,0 +1,19 @@
+{
+	"app": {
+		"route": "https://app.dashlane.com",
+		"name": "Dashlane",
+		"description": "Your password manager and digital wallet"	
+	},
+	"window": {
+		"width": 1150,
+		"height": 650,
+		"icon": "./dashlane.png"
+	},
+	"webkit": {
+		"cache": "online",
+		"context_menu": false,
+		"user_agent": "",
+		"site_quirks": true,
+		"same_frame": ["https://app.dashlane.com", "https://dashlane.com"]
+	}
+}
