@@ -11,7 +11,20 @@ class DashlaneWindow(AppWindow):
 
     def __init__(self):
         super(DashlaneWindow, self).__init__()
+        def on_decide_policy(webview, decision, decision_type):
+            # print(decision_type, decision)
+            # if decision_type == WebKit2.PolicyDecisionType.NEW_WINDOW_ACTION:
+            #     url = decision.get_navigation_action().get_request().get_uri()
+            #     print("opening new window", url)
+            if decision_type in [WebKit2.PolicyDecisionType.NAVIGATION_ACTION, WebKit2.PolicyDecisionType.NEW_WINDOW_ACTION]:
+                url = decision.get_navigation_action().get_request().get_uri()
+                print(url)
+                if url.lower().count("download") > 0:
+                    decision.ignore()
+                    return True
+
         self.webview.load_uri(settings("app", "route"))
+        self.webview.connect("decide-policy", on_decide_policy)
 
 DashlaneWindow()
 Gtk.main()
