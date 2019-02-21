@@ -4,7 +4,13 @@
 INSTALL_ROUTE=/usr/share/jad-dashlane-gui
 BASH_PATH=/usr/bin/dashlane-jad-gui
 CMD_NAME=dashlane-jad-gui
+GITREPO=git@github.com:asosnovsky/dashlane-jad-gui.git
 
+cd /tmp
+git clone $GITREPO djg
+cd djg
+
+echo "Preparing files..."
 sudo cp -r src $INSTALL_ROUTE
 echo "cd $INSTALL_ROUTE
 ./dashlane" > $CMD_NAME
@@ -22,10 +28,12 @@ Comment=Your password manager and digital wallet
 Path=
 " > dashlane.desktop
 
+echo "Storing commands..."
 sudo cp $CMD_NAME $BASH_PATH
 sudo chmod 755 $BASH_PATH
 sudo chmod +x $BASH_PATH
 
+echo "Creating desktop application..."
 sudo cp dashlane.desktop /usr/share/applications/dashlane.desktop
 sudo chmod 644 /usr/share/applications/dashlane.desktop
 
