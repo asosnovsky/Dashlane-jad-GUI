@@ -4,7 +4,7 @@
 INSTALL_ROUTE=/usr/share/jad-dashlane-gui
 BASH_PATH=/usr/bin/dashlane-jad-gui
 CMD_NAME=dashlane-jad-gui
-GITREPO=git@github.com:asosnovsky/dashlane-jad-gui.git
+GITREPO=https://github.com/asosnovsky/Dashlane-jad-GUI.git
 TMP_FOLDER=$(mktemp -d)
 
 git clone $GITREPO $TMP_FOLDER
